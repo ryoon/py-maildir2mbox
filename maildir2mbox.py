@@ -45,7 +45,7 @@ def maildir2mailbox(maildirname, mboxfilename):
 
    """
    # open the existing maildir and the target mbox file
-   maildir = mailbox.Maildir(maildirname, email.message_from_file)
+   maildir = mailbox.Maildir(maildirname)
    mbox = mailbox.mbox(mboxfilename)
 
    # lock the mbox
