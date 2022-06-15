@@ -67,7 +67,7 @@ mboxdirname=mboxname+'.sbd'
 maildir2mailbox(dirname,mboxname)
 if not os.path.exists(mboxdirname): os.makedirs(mboxdirname)
 
-listofdirs=[dn for dn in os.walk(dirname).next()[1] if dn not in ['new', 'cur', 'tmp']]
+listofdirs=[dn for dn in os.walk(dirname).__next__()[1] if dn not in ['new', 'cur', 'tmp']]
 for curfold in listofdirs:
    curlist=[mboxname]+curfold.split('.')
    curpath=os.path.join(*[dn+'.sbd' for dn in curlist if dn])
